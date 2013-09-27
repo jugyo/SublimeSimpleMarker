@@ -1,5 +1,4 @@
 import sublime, sublime_plugin
-import os
 
 SETTING_FILE_NAME = "SimpleMarker.sublime-settings"
 
