@@ -40,9 +40,7 @@ class SimpleMarkerListener(sublime_plugin.EventListener, SimpleMarkerSetting):
         for marker in markers:
             regions += view.find_all(marker)
 
-        view.add_regions("SimpleMarker", regions, "mark", "dot",
-            # sublime.DRAW_EMPTY)
-            sublime.DRAW_NO_FILL)
+        view.add_regions("SimpleMarker", regions, "mark", "dot", sublime.DRAW_EMPTY)
 
 class SimpleMarkerCommand(sublime_plugin.TextCommand, SimpleMarkerSetting):
     def run(self, edit, mode):
@@ -92,5 +90,5 @@ class SimpleMarkerCommand(sublime_plugin.TextCommand, SimpleMarkerSetting):
                 self.save_markers(markers)
                 self.list()
 
-        items = [['< Back', ''], ['- Delete', item]]
+        items = ['< Back', '- Delete (%s)' % item]
         sublime.set_timeout(lambda: self.window.show_quick_panel(items, on_done), 0)
