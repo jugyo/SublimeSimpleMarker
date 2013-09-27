@@ -1,0 +1,4 @@
+[
+  { "keys": ["super+shift+k", "super+shift+m"], "command": "simple_marker", "args": {"mode": "list"} },
+  { "keys": ["super+shift+k", "super+shift+n"], "command": "simple_marker", "args": {"mode": "add"} },
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "caption": "SimpleMarker: List Markers",
+        "command": "simple_marker",
+        "args": {"mode": "list"}
+    },
+    {
+        "caption": "SimpleMarker: Add Marker",
+        "command": "simple_marker",
+        "args": {"mode": "add"}
+    }
+]
