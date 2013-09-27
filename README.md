@@ -3,6 +3,8 @@ SublimeSimpleMarker
 
 Sublime Text plugin to manage MARKERS.
 
+![screencast](http://i.imgur.com/dRmQxNE.gif)
+
 ## Installation
 
 ```
