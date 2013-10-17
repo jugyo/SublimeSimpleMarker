@@ -51,11 +51,7 @@ class SimpleMarkerCommand(sublime_plugin.TextCommand, SimpleMarkerSetting):
             self.list()
 
     def add(self):
-        sel = self.view.sel()[0]
-        if not sel.begin() == sel.end():
-            self.new_marker(self.view.substr(sel).strip())
-        else:
-            self.new_marker()
+        self.new_marker()
 
     def add_marker(self, text):
         markers = self.load_markers()
@@ -63,7 +59,8 @@ class SimpleMarkerCommand(sublime_plugin.TextCommand, SimpleMarkerSetting):
         self.save_markers(list(set(markers)))
         self.list()
 
-    def new_marker(self, initial_text=''):
+    def new_marker(self):
+        initial_text = self.view.substr(self.view.sel()[0]).strip()
         self.window.show_input_panel('New marker', initial_text, self.add_marker, None, None)
 
     def list(self):
@@ -71,7 +68,7 @@ class SimpleMarkerCommand(sublime_plugin.TextCommand, SimpleMarkerSetting):
 
         def on_done(index):
             if index == 0:
-                self.new_marker('')
+                self.new_marker()
             elif index >= 1:
                 self.actions(markers[index - 1])
 
